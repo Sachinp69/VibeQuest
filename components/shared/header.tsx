@@ -8,7 +8,7 @@ import { Button } from '../ui/button'
 const Header = () => {
   return (
     <header className="w-full b-0" >
-      <div className='wrapper'>
+      <div className='wrapper ml-10 flex items-center justify-between '>
         <Link href="/" className="w-60">
             <Image src="/assets/images/logo.jpg" alt="logo" width={60} height={60} />
         </Link>
