@@ -17,10 +17,10 @@ export async function POST(req: Request) {
   }
  
   // Get the headers
-  const headerPayload = headers();
-  const svix_id = (await headerPayload).get("svix-id");
-  const svix_timestamp = headerPayload.get("svix-timestamp");
-  const svix_signature = headerPayload.get("svix-signature");
+  const headerPayload = await headers();
+  const svix_id: string | null =  headerPayload.get("svix-id");
+  const svix_timestamp: string | null = headerPayload.get("svix-timestamp");
+  const svix_signature: string | null = headerPayload.get("svix-signature");
  
   // If there are no headers, error out
   if (!svix_id || !svix_timestamp || !svix_signature) {
@@ -63,8 +63,8 @@ export async function POST(req: Request) {
       clerkId: id,
       email: email_addresses[0].email_address,
       username: username!,
-      firstName: first_name,
-      lastName: last_name,
+      firstName: first_name || '',
+      lastName: last_name || '',
       photo: image_url,
     }
 
@@ -85,8 +85,8 @@ export async function POST(req: Request) {
     const {id, image_url, first_name, last_name, username } = evt.data
 
     const user = {
-      firstName: first_name,
-      lastName: last_name,
+      firstName: first_name || '',
+      lastName: last_name || '',
       username: username!,
       photo: image_url,
     }
