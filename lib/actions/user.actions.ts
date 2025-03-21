@@ -1,4 +1,3 @@
-
 'use server'
 
 import { revalidatePath } from 'next/cache'
@@ -15,10 +14,11 @@ import { connect } from 'mongoose'
 export async function createUser(user: CreateUserParams) {
   try {
     await connectToDatabase()
-
+    console.log(user)
     const newUser = await User.create(user)
     return JSON.parse(JSON.stringify(newUser))
   } catch (error) {
+    console.error(error)
     handleError(error)
   }
 }
