@@ -1,4 +1,4 @@
-import EventForm from "@/components/shared/EventForm"
+// import EventForm from "@/components/shared/EventForm"
 import { auth } from "@clerk/nextjs/server";
 
 const UpdateEvent = async () => {
@@ -16,7 +16,7 @@ const UpdateEvent = async () => {
       </section>
 
       <div className="wrapper my-8">
-        <EventForm userId={userId} type="Update" />
+        {/* <EventForm userId={userId} type="Update" /> */}
       </div>
     </>
   )
