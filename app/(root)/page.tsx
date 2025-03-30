@@ -1,4 +1,4 @@
-import HardcodedEvents from '@/components/shared/HardCodedEvents';
+import EventCard from '@/components/shared/EventCard';
 import { Button } from '@/components/ui/button'
 
 import Image from 'next/image'
@@ -37,7 +37,7 @@ export default async function Home() {
           </h2>
           <div className="flex w-full flex-col gap-5 md:flex-row">
 
-              <HardcodedEvents />
+              <EventCard />
           </div>
           
       </section>

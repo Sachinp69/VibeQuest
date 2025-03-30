@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import HardcodedEvents from '@/components/shared/HardCodedEvents'
+import HardcodedEvents from '@/components/shared/EventCard'
 
 const page = () => {
   return (
