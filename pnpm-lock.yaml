@@ -11,6 +11,9 @@ importers:
       '@clerk/nextjs':
         specifier: ^6.12.5
         version: 6.12.12(next@15.2.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@googlemaps/js-api-loader':
+        specifier: ^1.16.8
+        version: 1.16.8
       '@hookform/resolvers':
         specifier: 3.3.2
         version: 3.3.2(react-hook-form@7.54.2(react@19.0.0))
@@ -99,6 +102,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.0.10
         version: 4.0.17
+      '@types/google.maps':
+        specifier: ^3.58.1
+        version: 3.58.1
       '@types/node':
         specifier: ^20
         version: 20.17.28
@@ -208,6 +214,9 @@ packages:
 
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
+
+  '@googlemaps/js-api-loader@1.16.8':
+    resolution: {integrity: sha512-CROqqwfKotdO6EBjZO/gQGVTbeDps5V7Mt9+8+5Q+jTg5CRMi3Ii/L9PmV3USROrt2uWxtGzJHORmByxyo9pSQ==}
 
   '@hookform/resolvers@3.3.2':
     resolution: {integrity: sha512-Tw+GGPnBp+5DOsSg4ek3LCPgkBOuOgS5DsDV7qsWNH9LZc433kgsWICjlsh2J9p04H2K66hsXPPb9qn9ILdUtA==}
@@ -824,6 +833,9 @@ packages:
 
   '@tailwindcss/postcss@4.0.17':
     resolution: {integrity: sha512-qeJbRTB5FMZXmuJF+eePd235EGY6IyJZF0Bh0YM6uMcCI4L9Z7dy+lPuLAhxOJzxnajsbjPoDAKOuAqZRtf1PQ==}
+
+  '@types/google.maps@3.58.1':
+    resolution: {integrity: sha512-X9QTSvGJ0nCfMzYOnaVs/k6/4L+7F5uCS+4iUmkLEls6J9S/Phv+m/i3mDeyc49ZBgwab3EFO1HEoBY7k98EGQ==}
 
   '@types/node@20.17.28':
     resolution: {integrity: sha512-DHlH/fNL6Mho38jTy7/JT7sn2wnXI+wULR6PV4gy4VHLVvnrV/d3pHAMQHhc4gjdLmK2ZiPoMxzp6B3yRajLSQ==}
@@ -2074,6 +2086,8 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
+  '@googlemaps/js-api-loader@1.16.8': {}
+
   '@hookform/resolvers@3.3.2(react-hook-form@7.54.2(react@19.0.0))':
     dependencies:
       react-hook-form: 7.54.2(react@19.0.0)
@@ -2590,6 +2604,8 @@ snapshots:
       lightningcss: 1.29.2
       postcss: 8.5.3
       tailwindcss: 4.0.17
+
+  '@types/google.maps@3.58.1': {}
 
   '@types/node@20.17.28':
     dependencies:

@@ -1,80 +1,99 @@
-import React from "react";
-import { Event } from "@/types";
+"use client";
 
-interface HardcodedEventsProps {
+import React, { useState } from "react";
+import { Event } from "@/types";
+import { Button } from "../ui/button";
+import Map from "@/components/Map";
+
+type HardcodedEventsProps = {
   limit?: number; // Optional prop to limit the number of events displayed
 }
 
-const HardcodedEvents: React.FC<HardcodedEventsProps> = ({ limit }) => {
-  const events: Event[] = [
-    {
-      _id: "1",
-      title: "Tech Conference 2025",
-      description: "A conference about the latest in technology.",
-      price: "500",
-      isFree: false,
-      imageUrl:
-        "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      location: "New York",
-      startDateTime: new Date("2025-04-15T10:00:00"),
-      endDateTime: new Date("2025-04-15T17:00:00"),
-      url: "#",
-      organizer: { _id: "101", firstName: "John", lastName: "Doe" },
-      category: { _id: "201", name: "Technology" },
-    },
-    {
-      _id: "2",
-      title: "Music Festival",
-      description: "Enjoy the biggest music festival of the year.",
-      price: "1000",
-      isFree: true,
-      imageUrl:
-        "https://media.istockphoto.com/id/1330424071/photo/large-group-of-people-at-a-concert-party.webp?a=1&b=1&s=612x612&w=0&k=20&c=jF4NInDkXlKvf3_jZmV5wBBn6aLqVvC37R6yhBaEv3I=",
-      location: "Los Angeles",
-      startDateTime: new Date("2025-06-20T18:00:00"),
-      endDateTime: new Date("2025-06-21T02:00:00"),
-      url: "#",
-      organizer: { _id: "102", firstName: "Alice", lastName: "Smith" },
-      category: { _id: "202", name: "Music" },
-    },
-    {
-      _id: "3",
-      title: "AI & ML Workshop",
-      description: "A hands-on workshop on AI and Machine Learning.",
-      price: "300",
-      isFree: false,
-      imageUrl:
-        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEFJJTIwd29ya3Nob3B8ZW58MHx8MHx8fDA%3D",
-      location: "San Francisco",
-      startDateTime: new Date("2025-07-10T09:00:00"),
-      endDateTime: new Date("2025-07-10T16:00:00"),
-      url: "#",
-      organizer: { _id: "103", firstName: "David", lastName: "Johnson" },
-      category: { _id: "203", name: "AI & ML" },
-    },
-    {
-      _id: "4",
-      title: "Startup Pitch Night",
-      description: "Pitch your startup idea to investors.",
-      price: "Free",
-      isFree: true,
-      imageUrl:
-        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3RhcnQlMjB1cHxlbnwwfHwwfHx8MA%3D%3D",
-      location: "Chicago",
-      startDateTime: new Date("2025-08-05T18:00:00"),
-      endDateTime: new Date("2025-08-05T22:00:00"),
-      url: "#",
-      organizer: { _id: "104", firstName: "Emma", lastName: "Williams" },
-      category: { _id: "204", name: "Entrepreneurship" },
-    },
-  ];
+  const HardcodedEvents: React.FC<HardcodedEventsProps> = ({ limit }) => {
+    const [selectedLocation, setSelectedLocation] = useState<{ lat: number; lng: number } | null>(null);
 
-  // Slice the events array based on the limit prop (if provided)
-  const displayedEvents = limit ? events.slice(0, limit) : events;
+    const events: Event[] = [
+      {
+        _id: "1",
+        title: "Tech Conference 2025",
+        description: "A conference about the latest in technology.",
+        price: "500",
+        isFree: false,
+        imageUrl:
+          "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1412&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        location: "Nagpur",
+        lat: 21.03949862678176, 
+        lng: 79.03055025236341,
+
+        startDateTime: new Date("2025-04-15T10:00:00"),
+        endDateTime: new Date("2025-04-15T17:00:00"),
+        url: "#",
+        organizer: { _id: "101", firstName: "John", lastName: "Doe" },
+        category: { _id: "201", name: "Technology" },
+      },
+      {
+        _id: "2",
+        title: "Music Festival",
+        description: "Enjoy the biggest music festival of the year.",
+        price: "1000",
+        isFree: false,
+        imageUrl:
+          "https://media.istockphoto.com/id/1330424071/photo/large-group-of-people-at-a-concert-party.webp?a=1&b=1&s=612x612&w=0&k=20&c=jF4NInDkXlKvf3_jZmV5wBBn6aLqVvC37R6yhBaEv3I=",
+        location: "Los Angeles",
+        lat: 21.16557427190347,
+        lng: 78.9486547335674,
+        startDateTime: new Date("2025-06-20T18:00:00"),
+        endDateTime: new Date("2025-06-21T02:00:00"),
+        url: "#",
+        organizer: { _id: "102", firstName: "Alice", lastName: "Smith" },
+        category: { _id: "202", name: "Music" },
+      },
+      {
+        _id: "3",
+        title: "AI & ML Workshop",
+        description: "A hands-on workshop on AI and Machine Learning.",
+        price: "300",
+        isFree: false,
+        imageUrl:
+          "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEFJJTIwd29ya3Nob3B8ZW58MHx8MHx8fDA%3D",
+        location: "San Francisco",
+        lat: 21.05143642867407,
+        lng: 79.0600723531205,
+
+        startDateTime: new Date("2025-07-10T09:00:00"),
+        endDateTime: new Date("2025-07-10T16:00:00"),
+        url: "#",
+        organizer: { _id: "103", firstName: "David", lastName: "Johnson" },
+        category: { _id: "203", name: "AI & ML" },
+      },
+      {
+        _id: "4",
+        title: "Startup Pitch Night",
+        description: "Pitch your startup idea to investors.",
+        price: "Free",
+        isFree: true,
+        imageUrl:
+          "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3RhcnQlMjB1cHxlbnwwfHwwfHx8MA%3D%3D",
+        location: "Chicago",
+        lat: 21.039542477730873, 
+        lng: 79.03032100181099,
+
+        startDateTime: new Date("2025-08-05T18:00:00"),
+        endDateTime: new Date("2025-08-05T22:00:00"),
+        url: "#",
+        organizer: { _id: "104", firstName: "Emma", lastName: "Williams" },
+        category: { _id: "204", name: "Entrepreneurship" },
+      },
+    ];
+
+    // Slice the events array based on the limit prop (if provided)
+    const displayedEvents = limit ? events.slice(0, limit) : events;
 
   return (
     <div className="max-w-6xl mx-auto p-6">
-
+      {selectedLocation && (
+        <Map lat={selectedLocation.lat} lng={selectedLocation.lng} onClose={() => setSelectedLocation(null)} />
+      )}
       {displayedEvents.length > 0 ? (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {displayedEvents.map((event) => (
@@ -107,6 +126,9 @@ const HardcodedEvents: React.FC<HardcodedEventsProps> = ({ limit }) => {
                 >
                   {event.isFree ? "Free Event" : `₹${event.price}`}
                 </p>
+                <Button onClick={() => setSelectedLocation({ lat: event.lat, lng: event.lng })} className="mt-3 bg-blue-500 text-white px-3 py-1 rounded">
+                📍 View Location
+                </Button>
                 <a
                   href={event.url}
                   className="block mt-3 text-blue-600 hover:underline"

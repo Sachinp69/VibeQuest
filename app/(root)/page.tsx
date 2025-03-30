@@ -1,5 +1,3 @@
-'use client'
- 
 import HardcodedEvents from '@/components/shared/HardCodedEvents';
 import { Button } from '@/components/ui/button'
 
