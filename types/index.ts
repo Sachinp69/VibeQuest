@@ -52,30 +52,30 @@
     path: string
   }
   
-  // export type DeleteEventParams = {
-  //   eventId: string
-  //   path: string
-  // }
+  export type DeleteEventParams = {
+    eventId: string
+    path: string
+  }
   
-  // export type GetAllEventsParams = {
-  //   query: string
-  //   category: string
-  //   limit: number
-  //   page: number
-  // }
+  export type GetAllEventsParams = {
+    query: string
+    category: string
+    limit: number
+    page: number
+  }
   
-  // export type GetEventsByUserParams = {
-  //   userId: string
-  //   limit?: number
-  //   page: number
-  // }
+  export type GetEventsByUserParams = {
+    userId: string
+    limit?: number
+    page: number
+  }
   
-  // export type GetRelatedEventsByCategoryParams = {
-  //   categoryId: string
-  //   eventId: string
-  //   limit?: number
-  //   page: number | string
-  // }
+  export type GetRelatedEventsByCategoryParams = {
+    categoryId: string
+    eventId: string
+    limit?: number
+    page: number | string
+  }
   
   export type Event = {
     _id: string
@@ -135,16 +135,16 @@
   }
   
   // ====== URL QUERY PARAMS
-  // export type UrlQueryParams = {
-  //   params: string
-  //   key: string
-  //   value: string | null
-  // }
+  export type UrlQueryParams = {
+    params: string
+    key: string
+    value: string | null
+  }
   
-  // export type RemoveUrlQueryParams = {
-  //   params: string
-  //   keysToRemove: string[]
-  // }
+  export type RemoveUrlQueryParams = {
+    params: string
+    keysToRemove: string[]
+  }
   
   // export type SearchParamProps = {
   //   params: { id: string }
