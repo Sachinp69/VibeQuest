@@ -27,7 +27,7 @@ import {Event} from "@/types";
         isFree: false,
         imageUrl:
           "https://media.istockphoto.com/id/1330424071/photo/large-group-of-people-at-a-concert-party.webp?a=1&b=1&s=612x612&w=0&k=20&c=jF4NInDkXlKvf3_jZmV5wBBn6aLqVvC37R6yhBaEv3I=",
-        location: "Los Angeles",
+        location: "Halff'time, Nagpur",
         lat: 21.16557427190347,
         lng: 78.9486547335674,
         startDateTime: new Date("2025-06-20T18:00:00"),
@@ -44,7 +44,7 @@ import {Event} from "@/types";
         isFree: false,
         imageUrl:
           "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEFJJTIwd29ya3Nob3B8ZW58MHx8MHx8fDA%3D",
-        location: "San Francisco",
+        location: "Nagpur",
         lat: 21.05143642867407,
         lng: 79.0600723531205,
 
@@ -62,7 +62,7 @@ import {Event} from "@/types";
         isFree: true,
         imageUrl:
           "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3RhcnQlMjB1cHxlbnwwfHwwfHx8MA%3D%3D",
-        location: "Chicago",
+        location: "Nagpur",
         lat: 21.039542477730873, 
         lng: 79.03032100181099,
 
