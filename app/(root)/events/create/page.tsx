@@ -1,4 +1,5 @@
 import EventForm from "@/components/shared/EventForm"
+import GoogleMapsWrapper from "@/components/shared/GoogleMapsWrapper";
 import { auth } from "@clerk/nextjs/server";
 
 const CreateEvent = async () => {
@@ -16,7 +17,9 @@ const CreateEvent = async () => {
       </section>
 
       <div className="wrapper my-8">
-        <EventForm userId={userId} type="Create" />
+        <GoogleMapsWrapper>
+          <EventForm userId={userId} type="Create" />
+        </GoogleMapsWrapper >
       </div>
     </>
   )

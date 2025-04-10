@@ -8,7 +8,7 @@ const page = () => {
     <>
       <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center px-12 py-5 md:py-10">
         <div className="wrapper px-5 flex items-center justify-center sm:justify-between">
-          <h3 className='h3-bold text-center sm:text-left'>My Tickets</h3>
+          <h3 className='h3-bold text-center sm:text-left'>My Events</h3>
           <Button asChild size="lg" className="button hidden sm:flex">
             <Link href="/#events">
               Explore More Events

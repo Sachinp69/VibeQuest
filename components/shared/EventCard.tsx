@@ -136,9 +136,6 @@ const EventCard: React.FC<EventCardProps> = ({ limit }) => {
                     Login to purchase tickets
                   </p>
                 )}
-                <a href={event.url} className="block mt-3 text-blue-600 hover:underline text-center">
-                  View Details →
-                </a>
               </div>
             </div>
           ))}
